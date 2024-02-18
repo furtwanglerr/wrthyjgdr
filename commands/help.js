@@ -35,7 +35,7 @@ module.exports = {
         .setTitle('**기본 명령어**')
         .addFields(
           { name: 'Ping', value: "봇의 답장 체크" },
-          { name: '🗑Clear', value: '서버에 있는 큐 정리' },
+          { name: 'Clear', value: '서버에 있는 큐 정리' },
           { name: 'Time', value: '플레이백타임' },
           { name: 'Filter', value: '필터' },
            { name: 'Now Playing', value: '현재 재생중인 곡 정보' },
