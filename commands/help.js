@@ -23,7 +23,7 @@ module.exports = {
           { name: 'Pause', value: '현재 듣고있는곡 재생 멈추기' },
           { name: 'Resume', value: '재생 멈춘 음악 다시 재생하기' },
           { name: 'Loop', value: '반복재생' },
-          { name: 'Autoplay', value: 자동재생' },
+          { name: 'Autoplay', value: '자동재생' },
           { name: 'Seek', value: '시간조정' },
           { name: 'Previous', value: '큐에 있는 이전곡 재생' },
           { name: 'Shuffle', value: '큐에 있는 곡들 섞기' }
