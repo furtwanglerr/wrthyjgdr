@@ -11,7 +11,7 @@ module.exports = async (client, queue, song) => {
         iconURL: 'https://cdn.discordapp.com/attachments/1140841446228897932/1144671132948103208/giphy.gif', 
         url: 'https://discord.gg/FUEHs7RCqz'
     })
-    .setDescription(`\n ‎ \n▶️ **디테일 :** **${song?.name}**\n▶️ **광고없는 음악재생!. ** \n▶️ **오류가 있다면 신재에게 문의!**`)
+    .setDescription(`\n ‎ \n▶️ **제목 :** **${song?.name}**\n▶️ **광고없는 음악재생!. ** \n▶️ **오류가 있다면 신재에게 문의!**`)
 .setImage(queue.songs[0].thumbnail)
     .setColor('#FF0000')
     .setFooter({ text: '/help로 더 많은 정보..!' });
