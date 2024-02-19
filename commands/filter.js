@@ -1,7 +1,7 @@
 const db = require("../mongoDB");
 module.exports = {
   name: "filter",
-  description: "Adds audio filter to ongoing music.",
+  description: "필터",
   permissions: "0x0000000000000800",
   options: [],
   voiceChannel: true,
@@ -9,7 +9,7 @@ module.exports = {
     try {
       const { EmbedBuilder, ActionRowBuilder, ButtonBuilder, ButtonStyle } = require('discord.js');
       const queue = client?.player?.getQueue(interaction?.guild?.id);
-      if (!queue || !queue?.playing) return interaction?.reply({ content: '⚠️ No music playing!!', ephemeral: true }).catch(e => { })
+      if (!queue || !queue?.playing) return interaction?.reply({ content: '⚠️ 재생중인 음악 없음', ephemeral: true }).catch(e => { })
 
       let buttons = new ActionRowBuilder().addComponents(
         new ButtonBuilder()
@@ -53,11 +53,11 @@ module.exports = {
       let embed = new EmbedBuilder()
       .setColor('#01fe66')
       .setAuthor({
-          name: 'Audio Filters ',
+          name: '오디오 필터 ',
           iconURL: 'https://cdn.discordapp.com/attachments/1156866389819281418/1157534645311766558/2353-arrowrightglow.gif?ex=6518f5a5&is=6517a425&hm=ce55696f7ed85e2f7a97a3505eb39016fa9cd0c50be043efdf0cce06d7126b4c&',
           url: 'https://discord.gg/FUEHs7RCqz'
         })
-      .setDescription('** Explore the Beat, Choose Your Sound Magic Below!**')
+      .setDescription('** 아래에서 선택!**')
   
     interaction.reply({ embeds: [embed], components: [buttons, buttons2] }).then(async Message => {
 
@@ -71,22 +71,22 @@ module.exports = {
 if(!filters?.includes(button?.customId)) return
 
       let filtre = button.customId
-      if (!filtre) return interaction?.editReply({ content: '❌ Invalid Name', ephemeral: true }).catch(e => { })
+      if (!filtre) return interaction?.editReply({ content: '❌ 유효하지 않은 이름', ephemeral: true }).catch(e => { })
      filtre = filtre?.toLowerCase()
    
       if (filters?.includes(filtre?.toLowerCase())) {
         if (queue?.filters?.has(filtre)) {
           queue?.filters?.remove(filtre)
-          embed?.setDescription(`Magic : **{filter}**, Applied Status: **{status}**`.replace("{filter}", filtre).replace("{status}", "❌"))
+          embed?.setDescription(`필터 : **{filter}**, 적용현황: **{status}**`.replace("{filter}", filtre).replace("{status}", "❌"))
           return interaction?.editReply({ embeds: [embed] }).catch(e => { })
         } else {
           queue?.filters?.add(filtre)
-          embed?.setDescription(`Magic : **{filter}**, Applied Status: **{status}**`.replace("{filter}", filtre).replace("{status}", "✅"))
+          embed?.setDescription(`필터 : **{filter}**, 적용현황: **{status}**`.replace("{filter}", filtre).replace("{status}", "✅"))
           return interaction?.editReply({ embeds: [embed] }).catch(e => { })
         }
       } else {
         const filter = filters?.find((x) => x?.toLowerCase() === filtre?.toLowerCase())
-        embed?.setDescription(`❌ Couldn't find filter!!`.replace("{filters}", filters?.map(mr => `\`${mr}\``).join(", ")))
+        embed?.setDescription(`❌ 필터를 찾을 수 없음!`.replace("{filters}", filters?.map(mr => `\`${mr}\``).join(", ")))
         if (!filter) return interaction?.editReply({ embeds: [embed] }).catch(e => { })
       }
     })
