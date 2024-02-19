@@ -38,11 +38,11 @@ module.exports = {
     },
 
     voiceConfig: {
-      leaveOnFinish: false,
-      leaveOnStop: false,
+      leaveOnFinish: true,
+      leaveOnStop: true,
       leaveOnEmpty: {
         status: true,
-        cooldown: 10000000,
+        cooldown: 100,
       },
 
     },
