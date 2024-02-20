@@ -6,7 +6,7 @@ const { ButtonStyle } = require('discord.js');
 
 module.exports = {
   name: "한강수온",
-  description: "빠지기 좋은 온도를 알려줘요!",
+  description: "퐁당! 좋은 온도를 알려줘요!",
   permissions: "0x0000000000000800",
   options: [],
 
@@ -14,32 +14,11 @@ module.exports = {
     try {
       const musicCommandsEmbed = new EmbedBuilder()
         .setColor(client.config.embedColor)
-        .setTitle('**퐁당하기 좋은 온도를 알려드리죠!**')
-        .addFields(
-          { name: '한강물 온도', value: '11°C' }
-        )
+        .setTitle('**현재 한강의 수온은 7.8°C예요!**')
         .setImage(`https://www.ydp.go.kr/site/tour/images/contents/cts5316_img_02.jpg`); 
-      const button1 = new ButtonBuilder()
-        .setLabel('보다정확한')
-        .setURL('https://hangang.ivlis.kr/')
-        .setStyle(ButtonStyle.Link);
-
-      const button2 = new ButtonBuilder()
-        .setLabel('한강수온은')
-        .setURL('https://hangang.ivlis.kr/')
-        .setStyle(ButtonStyle.Link);
-
-      const button3 = new ButtonBuilder()
-        .setLabel('여기서확인')
-        .setURL('https://hangang.ivlis.kr/')
-        .setStyle(ButtonStyle.Link);
-
-      const row = new ActionRowBuilder()
-        .addComponents(button1, button2, button3);
 
       interaction.reply({
-        embeds: [musicCommandsEmbed],
-        components: [row]
+        embeds: [musicCommandsEmbed]
       }).catch(e => {});
     } catch (e) {
       console.error(e);
