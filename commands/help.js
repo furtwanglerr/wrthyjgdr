@@ -21,27 +21,18 @@ module.exports = {
           { name: 'Queue', value: '이 서버에 있는 음악 큐 보기' },
           { name: 'Skip', value: '현재 재생중인 음악 스킵' },
           { name: 'Pause', value: '현재 듣고있는곡 재생 멈추기' },
-          { name: 'Resume', value: '재생 멈춘 음악 다시 재생하기' },
-          { name: 'Loop', value: '반복재생' },
-          { name: 'Autoplay', value: '자동재생' },
-          { name: 'Seek', value: '시간조정' },
-          { name: 'Previous', value: '큐에 있는 이전곡 재생' },
-          { name: 'Shuffle', value: '큐에 있는 곡들 섞기' }
+          { name: 'Resume', value: '재생 멈춘 음악 다시 재생하기' }
         )
-        .setImage(`https://tse4.mm.bing.net/th?id=OIP.iAf76KceapJNmlgAnAjhYgHaHa&pid=Api&P=0&h=220`); 
 
       const basicCommandsEmbed = new EmbedBuilder()
         .setColor(client.config.embedColor)
         .setTitle('**기본 명령어**')
         .addFields(
-          { name: 'Ping', value: "봇의 답장 체크" },
+          { name: 'Ping', value: "봇의 핑 확인" },
           { name: 'Clear', value: '서버에 있는 큐 정리' },
-          { name: 'Time', value: '플레이백타임' },
-          { name: 'Filter', value: '필터' },
-           { name: 'Now Playing', value: '현재 재생중인 곡 정보' },
-          { name: 'Volume', value: '볼륨조정' },
+          { name: 'Volume', value: '볼륨조정' }
         ) 
-       .setImage('https://tse4.mm.bing.net/th?id=OIP.iAf76KceapJNmlgAnAjhYgHaHa&pid=Api&P=0&h=220')
+        .setImage(`https://tse4.mm.bing.net/th?id=OIP.iAf76KceapJNmlgAnAjhYgHaHa&pid=Api&P=0&h=220`);
       const button1 = new ButtonBuilder()
         .setLabel('신재')
         .setURL('https://youtu.be/3djvQvlY5ZI')
