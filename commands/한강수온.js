@@ -14,7 +14,7 @@ module.exports = {
     try {
       const musicCommandsEmbed = new EmbedBuilder()
         .setColor(client.config.embedColor)
-        .setTitle('**현재 한강의 수온은 16°C예요!**')
+        .setTitle('**현재 한강의 수온은 1816°C예요!**')
         .setImage(`https://www.ydp.go.kr/site/tour/images/contents/cts5316_img_02.jpg`); 
 
       interaction.reply({
