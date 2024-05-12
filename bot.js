@@ -90,11 +90,11 @@ if(config.mongodbURL || process.env.MONGO){
   useNewUrlParser: true,
   useUnifiedTopology: true,
   }).then(async () => {
-    console.log('\x1b[32m%s\x1b[0m', `|    🍔 Connected MongoDB!`)
+    console.log('\x1b[32m%s\x1b[0m', `|    몽고디비 컨넥 성공`)
   }).catch((err) => {
-    console.log('\x1b[32m%s\x1b[0m', `|    🍔 Failed to connect MongoDB!`)})
+    console.log('\x1b[32m%s\x1b[0m', `|    몽고디비 컨넥 실패`)})
   } else {
-  console.log('\x1b[32m%s\x1b[0m', `|    🍔 Error MongoDB!`)
+  console.log('\x1b[32m%s\x1b[0m', `|    몽고디비 에러`)
   }
 
 
@@ -106,7 +106,7 @@ app.get('/', (req, res) => {
   res.sendFile(imagePath);
 });
 app.listen(port, () => {
-  console.log(`🔗 Listening to RTX: http://localhost:${port}`);
-  console.log(`✨ Happy New Year Welcome To 2024`);
+  console.log(`로컬호스트: http://localhost:${port}`);
+  console.log(`으앙`);
 });
 printWatermark();
