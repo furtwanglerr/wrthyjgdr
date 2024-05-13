@@ -13,7 +13,7 @@ module.exports = {
 
   sponsor: {
     status: true,
-    url: "https://www.youtube.com/channel/UCPbAvYWBgnYhliJa1BIrv0A",
+    url: "https://www.youtube.com/@SINJAE",
   },
 
   voteManager: {
